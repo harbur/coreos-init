@@ -23,7 +23,7 @@ Installing fig............ [ OK ]
 Creating swapfile......... [ OK ]
 </pre>
 
-* If there are any previous installations they are overwritten.
+* If a file already exists the specific installation step is skipped.
 * If there is already a `/swapfile` the swap creation step is skipped.
 
 You'll then be able to see the following:

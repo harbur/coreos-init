@@ -4,28 +4,39 @@ mkdir -p /opt/bin/
 
 # Install btrfs-swapon
 echo -n "Installing btrfs-swapon... "
-curl -sSL https://raw.githubusercontent.com/harbur/coreos-init/master/scripts/btrfs-swapon > /opt/bin/btrfs-swapon
-chmod +x /opt/bin/btrfs-swapon
-echo "[$(tput setaf 2) OK $(tput sgr 0)]"
+if [ -f "/opt/bin/btrfs-swapon" ] then
+	echo "[$(tput setaf 4)SKIP$(tput sgr 0)]"
+else
+	curl -sSL https://raw.githubusercontent.com/harbur/coreos-init/master/scripts/btrfs-swapon > /opt/bin/btrfs-swapon
+	chmod +x /opt/bin/btrfs-swapon
+	echo "[$(tput setaf 2) OK $(tput sgr 0)]"
+fi
 
 # Install docker-enter
 echo -n "Installing docker-enter... "
-curl -sSL https://raw.githubusercontent.com/harbur/coreos-init/master/scripts/docker-enter > /opt/bin/docker-enter
-chmod +x /opt/bin/docker-enter
-echo "[$(tput setaf 2) OK $(tput sgr 0)]"
+if [ -f "/opt/bin/docker-enter" ] then
+	echo "[$(tput setaf 4)SKIP$(tput sgr 0)]"
+else
+	curl -sSL https://raw.githubusercontent.com/harbur/coreos-init/master/scripts/docker-enter > /opt/bin/docker-enter
+	chmod +x /opt/bin/docker-enter
+	echo "[$(tput setaf 2) OK $(tput sgr 0)]"
+fi
 
 # Install fig
 echo -n "Installing fig............ "
-curl -sSL https://github.com/docker/fig/releases/download/0.5.2/linux > /opt/bin/fig
-chmod +x /opt/bin/fig
-echo "[$(tput setaf 2) OK $(tput sgr 0)]"
+if [ -f "/opt/bin/fig" ] then
+	echo "[$(tput setaf 4)SKIP$(tput sgr 0)]"
+else
+	curl -sSL https://github.com/docker/fig/releases/download/0.5.2/linux > /opt/bin/fig
+	chmod +x /opt/bin/fig
+	echo "[$(tput setaf 2) OK $(tput sgr 0)]"
+fi
 
 # Create 2Gb swapfile
 echo -n "Creating swapfile......... "
-if [ -f "/swapfile" ]
-	then
-		echo "[$(tput setaf 4)SKIP$(tput sgr 0)]"
-	else
-		btrfs-swapon 2147483648 /swapfile > /dev/null
-		echo "[$(tput setaf 2) OK $(tput sgr 0)]"
+if [ -f "/swapfile" ] then
+	echo "[$(tput setaf 4)SKIP$(tput sgr 0)]"
+else
+	btrfs-swapon 2147483648 /swapfile > /dev/null
+	echo "[$(tput setaf 2) OK $(tput sgr 0)]"
 fi
