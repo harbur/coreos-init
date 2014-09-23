@@ -7,7 +7,7 @@ This is a script for preparing CoreOS systems automatically. It features the fol
 * It installs docker-enter (https://github.com/jpetazzo/nsenter/blob/master/docker-enter)
 * It installs fig (http://www.fig.sh/install.html)
 * It creates 2Gb swapfile
-
+* It installs docker-sdlc (https://github.com/harbur/docker-sdlc)
 To use it, directly on new CoreOS instances:
 
 <pre>
@@ -21,10 +21,12 @@ Installing btrfs-swapon... [ OK ]
 Installing docker-enter... [ OK ]
 Installing fig............ [ OK ]
 Creating swapfile......... [ OK ]
+Installing docker-sdlc.... [ OK ]
 </pre>
 
 * If a file already exists the specific installation step is skipped.
 * If there is already a `/swapfile` the swap creation step is skipped.
+* If docker-sdlc is already cloned, it will pull instead of clone.
 
 You'll then be able to see the following:
 
@@ -93,3 +95,7 @@ core@demo ~ $ sudo docker-enter jenkins
 root@fdf7ff06b4f1:~# 
 </pre>
 
+docker-sdlc
+-----------
+
+docker-sdlc is a collection of fig files that compose an SDLC environment.
