@@ -26,6 +26,6 @@ if [ -f "/swapfile" ]
 	then
 		echo "[$(tput setaf 4)SKIP$(tput sgr 0)]"
 	else
-		btrfs-swapon 2147483648 /swapfile
+		btrfs-swapon 2147483648 /swapfile > /dev/null
 		echo "[$(tput setaf 2) OK $(tput sgr 0)]"
 fi
