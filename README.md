@@ -11,14 +11,15 @@ This is a script for preparing CoreOS systems automatically. It features the fol
 To use it, directly on new CoreOS instances:
 
 <pre>
-git@github.com:harbur/coreos-init.git
+git clone git@github.com:harbur/coreos-init.git
 cd coreos-init
 sudo ./install
 </pre>
 
 You'll then be able to see the following:
 
-h2. Swap
+Swap
+----
 
 <pre>
 core@demo ~ $ swapon -s
@@ -34,7 +35,8 @@ Mem:           494        487          6          0          0         51
 Swap:         2047         67       1980
 </pre>
 
-h2. Fig
+Fig
+---
 
 <pre>
 core@demo ~ $ fig 
@@ -64,7 +66,8 @@ Commands:
   up        Create and start containers
 </pre>
 
-h2. docker-enter
+docker-enter
+------------
 
 Docker-enter is a wrapper script that helps to nsenter inside containers. It uses as parameter the container id or name to identify the namespace.
 
