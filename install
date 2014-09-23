@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Install scripts
+mkdir -p /opt/bin/
+cp scripts/* /opt/bin/
+
+# Install fig
+curl -L https://github.com/docker/fig/releases/download/0.5.2/linux > /opt/bin/fig
+chmod +x /opt/bin/fig
+
+# Create 2Gb swapfile
+btrfs-swapon 2147483648 /swapfile
