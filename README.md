@@ -14,10 +14,9 @@ To use it, directly on new CoreOS instances:
 \curl -sSL https://raw.githubusercontent.com/harbur/coreos-init/master/install | sudo bash
 </pre>
 
-Output:
+Output will be:
 
 <pre>
-core@demo ~ $ \curl -sSL https://raw.githubusercontent.com/harbur/coreos-init/master/install | sudo bash
 Installing btrfs-swapon... [ OK ]
 Installing docker-enter... [ OK ]
 Installing fig............ [ OK ]
