@@ -3,8 +3,8 @@ CoreOS Initialization
 
 This is a script for preparing CoreOS systems automatically. It features the following:
 
-* It installs btrfs-swapon script (https://github.com/sebastian-philipp/btrfs-swapon)
-* It installs docker-enter script (https://github.com/jpetazzo/nsenter/blob/master/docker-enter)
+* It installs btrfs-swapon (https://github.com/sebastian-philipp/btrfs-swapon)
+* It installs docker-enter (https://github.com/jpetazzo/nsenter/blob/master/docker-enter)
 * It installs fig (http://www.fig.sh/install.html)
 * It creates 2Gb swapfile
 
@@ -13,6 +13,19 @@ To use it, directly on new CoreOS instances:
 <pre>
 \curl -sSL https://raw.githubusercontent.com/harbur/coreos-init/master/install | sudo bash
 </pre>
+
+Output:
+
+<pre>
+core@demo ~ $ \curl -sSL https://raw.githubusercontent.com/harbur/coreos-init/master/install | sudo bash
+Installing btrfs-swapon... [ OK ]
+Installing docker-enter... [ OK ]
+Installing fig............ [ OK ]
+Creating swapfile......... [ OK ]
+</pre>
+
+* If there are any previous installations they are overwritten.
+* If there is already a `/swapfile` the swap creation step is skipped.
 
 You'll then be able to see the following:
 
