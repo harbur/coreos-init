@@ -4,7 +4,7 @@ mkdir -p /opt/bin/
 
 # Install btrfs-swapon
 echo -n "Installing btrfs-swapon... "
-if [ -f "/opt/bin/btrfs-swapon" ] then
+if [ -f "/opt/bin/btrfs-swapon" ]; then
 	echo "[$(tput setaf 4)SKIP$(tput sgr 0)]"
 else
 	curl -sSL https://raw.githubusercontent.com/harbur/coreos-init/master/scripts/btrfs-swapon > /opt/bin/btrfs-swapon
@@ -14,7 +14,7 @@ fi
 
 # Install docker-enter
 echo -n "Installing docker-enter... "
-if [ -f "/opt/bin/docker-enter" ] then
+if [ -f "/opt/bin/docker-enter" ]; then
 	echo "[$(tput setaf 4)SKIP$(tput sgr 0)]"
 else
 	curl -sSL https://raw.githubusercontent.com/harbur/coreos-init/master/scripts/docker-enter > /opt/bin/docker-enter
@@ -24,7 +24,7 @@ fi
 
 # Install fig
 echo -n "Installing fig............ "
-if [ -f "/opt/bin/fig" ] then
+if [ -f "/opt/bin/fig" ]; then
 	echo "[$(tput setaf 4)SKIP$(tput sgr 0)]"
 else
 	curl -sSL https://github.com/docker/fig/releases/download/0.5.2/linux > /opt/bin/fig
@@ -34,7 +34,7 @@ fi
 
 # Create 2Gb swapfile
 echo -n "Creating swapfile......... "
-if [ -f "/swapfile" ] then
+if [ -f "/swapfile" ]; then
 	echo "[$(tput setaf 4)SKIP$(tput sgr 0)]"
 else
 	btrfs-swapon 2147483648 /swapfile > /dev/null
