@@ -15,16 +15,16 @@ chmod +x /opt/bin/docker-enter
 echo "[$(tput setaf 2) OK $(tput sgr 0)]"
 
 # Install fig
-echo -n "Installing fig... "
+echo -n "Installing fig............ "
 curl -sSL https://github.com/docker/fig/releases/download/0.5.2/linux > /opt/bin/fig
 chmod +x /opt/bin/fig
 echo "[$(tput setaf 2) OK $(tput sgr 0)]"
 
 # Create 2Gb swapfile
-echo -n "Creating swapfile... "
+echo -n "Creating swapfile......... "
 if [ -f "/swapfile" ]
 	then
-		echo "[$(tput setaf 4) SKIP $(tput sgr 0)]"
+		echo "[$(tput setaf 4)SKIP$(tput sgr 0)]"
 	else
 		btrfs-swapon 2147483648 /swapfile
 		echo "[$(tput setaf 2) OK $(tput sgr 0)]"
