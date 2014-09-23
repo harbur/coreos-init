@@ -8,6 +8,7 @@ This is a script for preparing CoreOS systems automatically. It features the fol
 * It installs fig (http://www.fig.sh/install.html)
 * It creates 2Gb swapfile
 * It installs docker-sdlc (https://github.com/harbur/docker-sdlc)
+
 To use it, directly on new CoreOS instances:
 
 <pre>

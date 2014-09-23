@@ -45,10 +45,10 @@ fi
 echo -n "Installing docker-sdlc.... "
 if [ -d "/home/core/docker-sdlc" ]; then
 	cd /home/core/docker-sdlc
-	git pull
+	git pull > /dev/null
 	echo "[$(tput setaf 4)PULL$(tput sgr 0)]"
 else
-	git clone https://github.com/harbur/docker-sdlc.git
+	git clone https://github.com/harbur/docker-sdlc.git > /dev/null
 	echo "[$(tput setaf 2) OK $(tput sgr 0)]"
 fi
 
