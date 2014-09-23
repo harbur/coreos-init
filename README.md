@@ -11,9 +11,7 @@ This is a script for preparing CoreOS systems automatically. It features the fol
 To use it, directly on new CoreOS instances:
 
 <pre>
-git clone https://github.com/harbur/coreos-init.git
-cd coreos-init
-sudo ./install
+\curl -sSL https://raw.githubusercontent.com/harbur/coreos-init/master/install | sudo bash
 </pre>
 
 You'll then be able to see the following:

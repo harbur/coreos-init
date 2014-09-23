@@ -1,11 +1,17 @@
 #!/bin/bash
 
-# Install scripts
 mkdir -p /opt/bin/
-cp scripts/* /opt/bin/
+
+# Install btrfs-swapon
+curl -sSL https://raw.githubusercontent.com/harbur/coreos-init/master/scripts/btrfs-swapon > /opt/bin/btrfs-swapon
+chmod +x /opt/bin/btrfs-swapon
+
+# Install docker-enter
+curl -sSL https://raw.githubusercontent.com/harbur/coreos-init/master/scripts/docker-enter > /opt/bin/docker-enter
+chmod +x /opt/bin/docker-enter
 
 # Install fig
-curl -L https://github.com/docker/fig/releases/download/0.5.2/linux > /opt/bin/fig
+curl -sSL https://github.com/docker/fig/releases/download/0.5.2/linux > /opt/bin/fig
 chmod +x /opt/bin/fig
 
 # Create 2Gb swapfile
