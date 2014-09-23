@@ -11,7 +11,7 @@ This is a script for preparing CoreOS systems automatically. It features the fol
 To use it, directly on new CoreOS instances:
 
 <pre>
-git clone git@github.com:harbur/coreos-init.git
+git clone https://github.com/harbur/coreos-init.git
 cd coreos-init
 sudo ./install
 </pre>
