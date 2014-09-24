@@ -3,11 +3,11 @@ CoreOS Initialization
 
 This is a script for preparing CoreOS systems automatically. It features the following:
 
-* It installs [btrfs-swapon](https://github.com/sebastian-philipp/btrfs-swapon)
-* It installs [docker-enter](https://github.com/jpetazzo/nsenter/blob/master/docker-enter)
 * It installs [fig](http://www.fig.sh/install.html)
-* It creates 2Gb swapfile
 * It installs [docker-sdlc](https://github.com/harbur/docker-sdlc)
+* It installs [docker-enter](https://github.com/jpetazzo/nsenter/blob/master/docker-enter)
+* It installs [btrfs-swapon](https://github.com/sebastian-philipp/btrfs-swapon)
+* It creates 2Gb swapfile
 
 To use it, directly on new CoreOS instances:
 
@@ -18,11 +18,11 @@ To use it, directly on new CoreOS instances:
 Output will be:
 
 <pre>
-Installing btrfs-swapon... [ OK ]
-Installing docker-enter... [ OK ]
 Installing fig............ [ OK ]
-Creating swapfile......... [ OK ]
 Installing docker-sdlc.... [ OK ]
+Installing docker-enter... [ OK ]
+Installing btrfs-swapon... [ OK ]
+Creating swapfile......... [ OK ]
 </pre>
 
 * If a file already exists the specific installation step is skipped.
@@ -30,23 +30,6 @@ Installing docker-sdlc.... [ OK ]
 * If docker-sdlc is already cloned, it will pull instead of clone.
 
 You'll then be able to see the following:
-
-Swap
-----
-
-<pre>
-core@demo ~ $ swapon -s
-Filename				Type		Size	Used	Priority
-/dev/loop2                             	partition	2097148	69420	-1
-</pre>
-
-<pre>
-core@demo ~ $ free -m 
-             total       used       free     shared    buffers     cached
-Mem:           494        487          6          0          0         51
--/+ buffers/cache:        436         58
-Swap:         2047         67       1980
-</pre>
 
 Fig
 ---
@@ -79,6 +62,11 @@ Commands:
   up        Create and start containers
 </pre>
 
+docker-sdlc
+-----------
+
+docker-sdlc is a collection of fig files that compose an SDLC environment.
+
 docker-enter
 ------------
 
@@ -96,7 +84,20 @@ core@demo ~ $ sudo docker-enter jenkins
 root@fdf7ff06b4f1:~# 
 </pre>
 
-docker-sdlc
------------
+Swap
+----
 
-docker-sdlc is a collection of fig files that compose an SDLC environment.
+<pre>
+core@demo ~ $ swapon -s
+Filename				Type		Size	Used	Priority
+/dev/loop2                             	partition	2097148	69420	-1
+</pre>
+
+<pre>
+core@demo ~ $ free -m 
+             total       used       free     shared    buffers     cached
+Mem:           494        487          6          0          0         51
+-/+ buffers/cache:        436         58
+Swap:         2047         67       1980
+</pre>
+
