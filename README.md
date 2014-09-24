@@ -3,11 +3,11 @@ CoreOS Initialization
 
 This is a script for preparing CoreOS systems automatically. It features the following:
 
-* It installs btrfs-swapon (https://github.com/sebastian-philipp/btrfs-swapon)
-* It installs docker-enter (https://github.com/jpetazzo/nsenter/blob/master/docker-enter)
-* It installs fig (http://www.fig.sh/install.html)
+* It installs [btrfs-swapon](https://github.com/sebastian-philipp/btrfs-swapon)
+* It installs [docker-enter](https://github.com/jpetazzo/nsenter/blob/master/docker-enter)
+* It installs [fig](http://www.fig.sh/install.html)
 * It creates 2Gb swapfile
-* It installs docker-sdlc (https://github.com/harbur/docker-sdlc)
+* It installs [docker-sdlc](https://github.com/harbur/docker-sdlc)
 
 To use it, directly on new CoreOS instances:
 
