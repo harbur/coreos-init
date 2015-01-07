@@ -7,7 +7,7 @@ echo -n "Installing fig............ "
 if [ -f "/opt/bin/fig" ]; then
 	echo "[$(tput setaf 4)SKIP$(tput sgr 0)]"
 else
-	curl -sSL https://github.com/docker/fig/releases/download/0.5.2/linux > /opt/bin/fig
+	curl -sSL https://github.com/docker/fig/releases/download/1.0.1/fig-`uname -s`-`uname -m` > /opt/bin/fig
 	chmod +x /opt/bin/fig
 	echo "[$(tput setaf 2) OK $(tput sgr 0)]"
 fi
