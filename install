@@ -24,16 +24,6 @@ else
 	echo "[$(tput setaf 2) OK $(tput sgr 0)]"
 fi
 
-# Install docker-enter
-echo -n "Installing docker-enter... "
-if [ -f "/opt/bin/docker-enter" ]; then
-	echo "[$(tput setaf 4)SKIP$(tput sgr 0)]"
-else
-	curl -sSL https://raw.githubusercontent.com/harbur/coreos-init/master/scripts/docker-enter > /opt/bin/docker-enter
-	chmod +x /opt/bin/docker-enter
-	echo "[$(tput setaf 2) OK $(tput sgr 0)]"
-fi
-
 # Install btrfs-swapon
 echo -n "Installing btrfs-swapon... "
 if [ -f "/opt/bin/btrfs-swapon" ]; then
